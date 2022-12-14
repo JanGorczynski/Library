@@ -1,4 +1,4 @@
-package com.example.demo.controlers;
+package com.example.demo.controllers;
 
 import java.util.List;
 
@@ -24,7 +24,7 @@ import com.example.demo.repositories.UsersRepository;
 import com.example.demo.services.RentService;
 
 @Controller
-public class RentsControler {
+public class RentsController {
 
     @Autowired
     RentsRepository rentsRepository;
@@ -38,7 +38,7 @@ public class RentsControler {
     @Autowired
     RentService rentService;
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500/")
+    @CrossOrigin(origins = "http://localhost:5050")
     @GetMapping(path = "/Rents")
     public ResponseEntity<Object> getRentsForUsername(@RequestParam(name = "username") String username) {
 	try {
@@ -52,7 +52,7 @@ public class RentsControler {
 
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500/")
+    @CrossOrigin(origins = "http://localhost:5050")
     @DeleteMapping(path = "/Rents/delete")
     public ResponseEntity<Object> deleteRent(@RequestParam(name = "id") Integer id) {
 	try {
@@ -63,6 +63,7 @@ public class RentsControler {
 	}
     }
 
+    @CrossOrigin(origins = "http://localhost:5050")
     @PostMapping(path = "/Rents")
     public ResponseEntity<Object> addRent(@RequestParam(name = "user_id") Integer userId,
 	    @RequestParam(name = "book_id") Integer bookId) {
@@ -83,7 +84,7 @@ public class RentsControler {
 	}
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5500/")
+    @CrossOrigin(origins = "http://localhost:5050")
     @PatchMapping(path = "/Rents/prolong")
     public ResponseEntity<Object> prolongRent(@RequestParam(name = "id") Integer id) {
 	try {
