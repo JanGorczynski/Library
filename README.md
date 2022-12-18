@@ -1,2 +1,3 @@
 This is a small project that simulates virtual library, it consits of rest API wirten in java and front end writen in html, css, javascript. The project also uses microsft sql as its database.
-To run this project you need to configure Microsoft sql database using queries found in sql/sqlQuery, you also have to host forntend page in folder frontend on localhost port 5050.
+To build this project you need to configure Microsoft sql database using queries found in sql/sqlQuery. You need to make your data base case insensitive so that hibernate queries work properly, use standard username and passoword: username "sa" password "sys", if not change those parameters in file aplication properties.
+You also have to host forntend page in folder frontend on localhost port 5050. Go to folder frontend and type python -m http.server 5050.
